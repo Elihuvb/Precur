@@ -88,7 +88,7 @@ function TimeList({ entries, onEdit, onDelete }) {
   return (
     <ul className='list-group p-3 pb-5 mb-5'>
       {entries.map(entry => (
-        <li key={entry.id} className='p-1 d-flex align-items-center list-group-item text-white bg-dark'>
+        <li key={entry.id} className='p-2 d-flex align-items-center list-group-item text-white bg-dark'>
           <p className='flex-grow-1 fs-5 fw-bolder'>{entry.hours}:{entry.minutes} <br />
           <span className='fs-6 fw-light text-white-50'>{formatDate(entry.createdAt)}</span></p>
           <button onClick={() => onDelete(entry.id)} className='m-2 btn btn-danger'>Eliminar</button>
