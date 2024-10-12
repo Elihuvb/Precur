@@ -86,11 +86,11 @@ function TimeList({ entries, onEdit, onDelete }) {
   };
 
   return (
-    <ul className='list-group p-3 pb-5'>
+    <ul className='list-group p-3 pb-5 mb-5'>
       {entries.map(entry => (
-        <li key={entry.id} className='p-3 d-flex align-items-center list-group-item text-white bg-dark'>
-          <p className='flex-grow-1 fs-2 fw-bold'>{entry.hours}:{entry.minutes} <br />
-          <span className='fs-5 text-white-50'>{formatDate(entry.createdAt)}</span></p>
+        <li key={entry.id} className='p-1 d-flex align-items-center list-group-item text-white bg-dark'>
+          <p className='flex-grow-1 fs-5 fw-bolder'>{entry.hours}:{entry.minutes} <br />
+          <span className='fs-6 fw-light text-white-50'>{formatDate(entry.createdAt)}</span></p>
           <button onClick={() => onDelete(entry.id)} className='m-2 btn btn-danger'>Eliminar</button>
         </li>
       ))}
@@ -218,7 +218,7 @@ function App() {
         <div className='pt-4'></div>
         <h1 className='p-3'>Registro de Tiempo</h1>
         <TimeList entries={entries} onEdit={handleEditEntry} onDelete={handleDeleteEntry} />
-        <div className='p-3 d-flex justify-content-between fixed-bottom border-top'>
+        <div className='p-3 d-flex justify-content-between fixed-bottom border-top bg-dark'>
           <div>
             <h2 className='fs-4'>Total por Mes</h2>
             <ul className='list-group bg-dark'>{getTotalTimeByMonth()}</ul>
